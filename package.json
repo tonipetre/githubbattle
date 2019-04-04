@@ -1,7 +1,7 @@
 {
   "name": "githubbattle",
   "version": "1.0.0",
-  "description": "",
+  "description": "Silly game to see who's better at github.",
   "main": "index.js",
   "babel": {
     "presets": [
@@ -10,14 +10,22 @@
     ]
   },
   "scripts": {
-    "start": "webpack"
+    "start": "webpack-dev-server --open",
+    "build": "NODE_ENV='production' webpack",
+    "build-for-windows": "SET NODE_ENV='production' && webpack",
+    "firebase-init": "firebase login && firebase init",
+    "deploy": "npm run build && firebase deploy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
+    "prop-types": "^15.7.2",
+    "query-string": "^6.4.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
